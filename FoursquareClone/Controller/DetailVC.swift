@@ -33,6 +33,7 @@ class DetailVC: UIViewController, MKMapViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getDataFromParse()
         mapView.delegate = self
        
     }
