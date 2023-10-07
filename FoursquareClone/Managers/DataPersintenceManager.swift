@@ -14,17 +14,15 @@ class DataPersintenceManager {
     
     static let shared = DataPersintenceManager()
     
-    func createObject(name: String, calories: String?) {
+    func createPlaceObject(name: String, type: String, atmosphere : String, latitude : String , longitude : String ,image : ParseFile) {
         
-        let item = Fruit(name: name, calories: calories)
+        let item = Place(name: name,type: type ,atmosphere: atmosphere, latitude: latitude,longitude: longitude,image: image)
             
         item.save { [weak self] result in
             guard self != nil else { return }
             switch result {
             case .success(_):
-                
                 print("uploaded")
-               
             case .failure(let error):
                 print(error.localizedDescription)
             }
